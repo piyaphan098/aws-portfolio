@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piyaphan | Cloud Engineer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0D1B2A; color: #E2E8F0; font-family: Arial, sans-serif; }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 80px 20px 50px;
+      background: linear-gradient(180deg, #0D1B2A 0%, #1E293B 100%);
+      border-bottom: 1px solid #1E3A5F;
+    }
+    .hero h1 {
+      font-size: 52px; color: #FFFFFF; font-weight: 700;
+      letter-spacing: 4px; margin-bottom: 12px;
+    }
+    .hero .title { font-size: 20px; color: #2563EB; margin-bottom: 8px; }
+    .hero .sub { font-size: 15px; color: #64748B; }
+    .hero .status {
+      display: inline-block; margin-top: 20px;
+      background: #064E3B; color: #6EE7B7;
+      padding: 6px 16px; border-radius: 20px; font-size: 13px;
+    }
+    .hero .status::before { content: "🟢 "; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 960px; margin: 0 auto; padding: 50px 24px; }
+    .section-title {
+      font-size: 20px; color: #2563EB; font-weight: 700;
+      border-bottom: 2px solid #1E3A5F; padding-bottom: 10px;
+      margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+    }
+    .divider { height: 1px; background: #1E3A5F; max-width: 960px; margin: 0 auto; }
+
+    /* ── BADGES ── */
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; }
+    .badge {
+      padding: 8px 18px; border-radius: 20px; font-size: 13px;
+      font-weight: 500; transition: transform 0.2s;
+    }
+    .badge:hover { transform: translateY(-2px); }
+    .badge.blue  { background: #1E3A5F; color: #93C5FD; border: 1px solid #2563EB33; }
+    .badge.green { background: #064E3B; color: #6EE7B7; border: 1px solid #05966933; }
+    .badge.purple{ background: #3B0764; color: #C4B5FD; border: 1px solid #7C3AED33; }
+    .badge.teal  { background: #134E4A; color: #5EEAD4; border: 1px solid #0F766E33; }
+
+    /* ── CARDS ── */
+    .card {
+      background: #1E293B; border: 1px solid #334155;
+      border-radius: 14px; padding: 24px; margin-bottom: 16px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover { border-color: #2563EB; transform: translateY(-2px); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+    .card h3 { color: #FFFFFF; font-size: 16px; font-weight: 600; }
+    .card .date { color: #64748B; font-size: 13px; white-space: nowrap; margin-left: 12px; }
+    .card p { color: #94A3B8; font-size: 14px; line-height: 1.7; }
+    .card .highlight { color: #38BDF8; font-weight: 500; }
+    .tags { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag {
+      background: #0F172A; color: #38BDF8; font-size: 12px;
+      padding: 4px 12px; border-radius: 10px; border: 1px solid #1E3A5F;
+    }
+
+    /* ── ARCHITECTURE ── */
+    .arch {
+      background: #0D2137; border: 1px solid #1E3A5F;
+      border-radius: 10px; padding: 20px; margin: 16px 0;
+      font-family: 'Courier New', monospace; font-size: 13px;
+      color: #38BDF8; line-height: 1.8;
+    }
+    .arch .arrow { color: #64748B; }
+    .arch .box { color: #6EE7B7; }
+    .arch .note { color: #F59E0B; font-size: 12px; }
+
+    /* ── STATS ── */
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+    .stat-card {
+      background: #1E293B; border: 1px solid #334155;
+      border-radius: 12px; padding: 20px; text-align: center;
+    }
+    .stat-card .num { font-size: 32px; font-weight: 700; color: #2563EB; }
+    .stat-card .label { font-size: 13px; color: #64748B; margin-top: 4px; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 40px 20px;
+      color: #64748B; border-top: 1px solid #1E3A5F;
+    }
+    footer a { color: #2563EB; text-decoration: none; margin: 0 12px; font-weight: 500; }
+    footer a:hover { color: #60A5FA; }
+
+    /* ── PROJECT BADGE ── */
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #0F172A; border: 1px solid #2563EB;
+      color: #60A5FA; font-size: 12px; padding: 4px 12px;
+      border-radius: 20px; margin-top: 10px;
+    }
+    .live-dot { width: 6px; height: 6px; background: #22C55E; border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>PIYAPHAN SUKPONG</h1>
+    <div class="title">Junior Cloud Engineer</div>
+    <div class="sub">IT Engineer ที่กำลังเปลี่ยนสายงานสู่ Cloud Infrastructure</div>
+    <div class="status">Open to Work — Cloud Engineer / DevOps</div>
+  </div>
+
+  <!-- STATS -->
+  <div class="container">
+    <div class="stats">
+      <div class="stat-card">
+        <div class="num">3+</div>
+        <div class="label">ปีประสบการณ์ IT Support</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">50+</div>
+        <div class="label">Users ที่ดูแล</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">1</div>
+        <div class="label">AWS EC2 Running Live 🟢</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SKILLS -->
+  <div class="container">
+    <div class="section-title">🛠️ Technical Skills</div>
+    <div class="badges">
+      <span class="badge blue">☁️ AWS EC2</span>
+      <span class="badge blue">🔒 Security Groups</span>
+      <span class="badge blue">🗄️ VPC & IAM</span>
+      <span class="badge blue">📦 S3</span>
+      <span class="badge green">🐳 Docker</span>
+      <span class="badge green">⚙️ Docker Compose</span>
+      <span class="badge green">📄 Dockerfile</span>
+      <span class="badge teal">🌐 Nginx</span>
+      <span class="badge teal">🐧 Linux (Amazon Linux 2023)</span>
+      <span class="badge teal">💻 Bash Scripting</span>
+      <span class="badge purple">📝 Git & GitHub</span>
+      <span class="badge purple">⌨️ AWS CLI</span>
+      <span class="badge blue">🖥️ Windows Server & AD</span>
+      <span class="badge blue">🌐 HTML / CSS / JS</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PROJECTS -->
+  <div class="container">
+    <div class="section-title">🚀 Cloud Projects</div>
+
+    <div class="card">
+      <div class="card-header">
+        <h3>Personal Cloud Lab — AWS EC2 + Docker + Nginx</h3>
+        <span class="date">2026 · In Progress</span>
+      </div>
+      <div class="live-badge">
+        <div class="live-dot"></div>
+        Live on 54.179.191.239 · ap-southeast-1 (Singapore)
+      </div>
+      <p style="margin-top:12px">
+        Provisioned AWS EC2 instance (Amazon Linux 2023, t3.micro) and deployed containerized Nginx web server using Docker.
+        Configured <span class="highlight">Security Groups</span>, <span class="highlight">IAM Role</span>, and <span class="highlight">VPC</span> with proper least-privilege access.
+        Managed multi-container environment with Docker Compose. Website accessible from public internet.
+      </p>
+      <div class="arch">
+        <span class="arrow">Internet</span> → <span class="box">EC2 (Public IP)</span> → <span class="arrow">Security Group</span> → <span class="box">Docker Compose</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="box">Nginx Container</span> → HTML/CSS<br>
+        <span class="note"># Port 80: public | Port 22: restricted to own IP | Port 3306: internal only</span>
+      </div>
+      <div class="tags">
+        <span class="tag">AWS EC2</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Nginx</span>
+        <span class="tag">Docker Compose</span>
+        <span class="tag">Security Group</span>
+        <span class="tag">IAM Role</span>
+        <span class="tag">VPC</span>
+        <span class="tag">Amazon Linux 2023</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h3>CCTV Monitoring System — Enterprise Deployment</h3>
+        <span class="date">2024 · Completed</span>
+      </div>
+      <p>Designed and deployed comprehensive 20+ camera CCTV surveillance system for enterprise facility. Responsible for network topology planning, cable routing, NVR configuration, and system handover.</p>
+      <div class="tags">
+        <span class="tag">Network Design</span>
+        <span class="tag">Infrastructure</span>
+        <span class="tag">Project Management</span>
+        <span class="tag">Vendor Coordination</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h3>Official Golf Course Website — Development & Maintenance</h3>
+        <span class="date">2023 · Completed</span>
+      </div>
+      <p>Developed and maintained the Greenwood Golf Club official website using HTML, JavaScript, and CSS. Implemented online booking system with dynamic pricing to reduce manual phone reservations.</p>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">CSS</span>
+        <span class="tag">Web CMS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE -->
+  <div class="container">
+    <div class="section-title">💼 Experience</div>
+    <div class="card">
+      <div class="card-header">
+        <h3>IT Support Engineer — C2K IT Service</h3>
+        <span class="date">Feb 2023 – Present · Bangkok</span>
+      </div>
+      <p>Supporting 50+ users across production environments including Windows Server, Active Directory, enterprise network infrastructure and critical incident response. Restored full network connectivity within 3 hours during major outage. Led CCTV and IP Phone system deployments.</p>
+      <div class="tags">
+        <span class="tag">Windows Server</span>
+        <span class="tag">Active Directory</span>
+        <span class="tag">Network Troubleshooting</span>
+        <span class="tag">Tier 1-3 Support</span>
+        <span class="tag">Microsoft 365</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="margin-bottom:12px">📧 piyaphan1584@gmail.com &nbsp;|&nbsp; 📱 +66 98 904 0369 &nbsp;|&nbsp; 📍 Chonburi, Thailand</p>
+    <p>
+      <a href="https://linkedin.com/in/piyaphan">🔗 LinkedIn</a>
+      <a href="https://github.com/piyaphan098">💻 GitHub</a>
+    </p>
+    <p style="margin-top:16px;font-size:12px;color:#334155">
+      Hosted on AWS EC2 · ap-southeast-1 · Docker + Nginx · Built with 💙
+    </p>
+  </footer>
+
+</body>
+</html>
