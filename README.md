@@ -15,7 +15,7 @@ A portfolio website deployed on real AWS infrastructure, demonstrating end-to-en
 
 **Live Demo:**
 - 🌐 S3 Static: http://piyaphan-portfolio-2026.s3-website-ap-southeast-1.amazonaws.com
-- 🐳 EC2 + Docker: http://18.143.65.218
+- 🐳 EC2 + Docker: http://13.250.63.142
 
 ---
 
