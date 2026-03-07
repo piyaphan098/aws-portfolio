@@ -29,7 +29,7 @@ This repository demonstrates practical experience with:
 
 **EC2 Docker Deployment**
 
-http://18.143.65.218
+http://13.250.63.142
 
 **S3 Static Website**
 
