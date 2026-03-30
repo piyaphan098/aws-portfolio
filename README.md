@@ -1,223 +1,63 @@
-# 🚀 AWS Cloud Portfolio — Piyaphan Sukpong
+# Hi, I'm Piyaphan Sukpong 👋
 
-> Junior Cloud Engineer transitioning from **IT Support → Cloud Infrastructure**
-
-![AWS](https://img.shields.io/badge/AWS-Cloud-FF9900?style=flat\&logo=amazon-aws)
-![Docker](https://img.shields.io/badge/Docker-Containerization-2496ED?style=flat\&logo=docker)
-![Nginx](https://img.shields.io/badge/Nginx-Web_Server-009639?style=flat\&logo=nginx)
-![S3](https://img.shields.io/badge/AWS-S3_Static_Hosting-569A31?style=flat\&logo=amazon-s3)
+### Junior Cloud Engineer | Transitioning from IT Support → Cloud Infrastructure
 
 ---
 
-# 📌 Project Overview
+## 🛠️ Tech Stack
 
-This project demonstrates how to deploy a **cloud-based portfolio website** using real cloud infrastructure.
+**Cloud & Infrastructure**
+![AWS](https://img.shields.io/badge/AWS-EC2%20%7C%20S3%20%7C%20IAM-FF9900?style=flat&logo=amazonaws&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=flat&logo=terraform&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Containerization-2496ED?style=flat&logo=docker&logoColor=white)
 
-The system runs on **AWS EC2 with Docker containers** and follows cloud security best practices such as IAM roles, restricted SSH access, and minimal open ports.
+**Web Server & CI/CD**
+![Nginx](https://img.shields.io/badge/Nginx-Web%20Server-009639?style=flat&logo=nginx&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?style=flat&logo=githubactions&logoColor=white)
 
-This repository demonstrates practical experience with:
-
-* AWS EC2 cloud infrastructure
-* Docker container deployment
-* Static website hosting on S3
-* Linux server management
-* Git-based deployment workflow
-
----
-
-# 🌐 Live Demo
-
-**EC2 Docker Deployment**
-
-(http://47.129.192.204/)
-
-**S3 Static Website**
-
-http://piyaphan-portfolio-2026.s3-website-ap-southeast-1.amazonaws.com
+**Development**
+![TypeScript](https://img.shields.io/badge/TypeScript-Next.js-3178C6?style=flat&logo=typescript&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-Server%20Management-FCC624?style=flat&logo=linux&logoColor=black)
 
 ---
 
-# 🏗️ Architecture
+## 🚀 Featured Projects
 
-```
-Internet
-   │
-   ▼
-Security Group
-(Ports: 80, 443, 8082–8085)
-   │
-   ▼
-EC2 Instance
-Amazon Linux 2023
-ap-southeast-1 (Singapore)
-   │
-   ▼
-Docker Engine
-   │
-   ├── nginx container (Port 80)   → Portfolio Website
-   ├── nginx container (Port 8082) → Static Site
-   ├── nginx container (Port 8083) → Docker Compose Web
-   ├── httpd container (Port 8084) → Apache App
-   └── nginx container (Port 8085) → Git Clone Test
-   │
-   ▼
-S3 Bucket
-Static Website Hosting
-```
+### ☁️ AWS Cloud Portfolio
+> Deployed on AWS EC2 with Docker + Nginx + GitHub Actions CI/CD
+
+- Infrastructure provisioned with **Terraform IaC** (EC2, S3, Security Group)
+- Containerized with **Docker** and served via **Nginx**
+- Automated deployment via **GitHub Actions** CI/CD pipeline
+- Static website hosted on **S3**
+
+🔗 [GitHub](https://github.com/piyaphan098/aws-portfolio) | 🌐 [Live Demo](http://47.129.192.204)
 
 ---
 
-# ⚙️ Deployment Workflow
+### 🖥️ IT ERP System
+> Full-stack ERP system built with Next.js + TypeScript + Prisma + MariaDB
 
-```
-Developer
-   │
-   ▼
-Git Commit
-   │
-   ▼
-Git Push
-   │
-   ▼
-GitHub Repository
-   │
-   ▼
-Deploy to AWS EC2
-```
+- Deployed on **AWS EC2** with production environment
+- Database management with **Prisma ORM** + **MariaDB**
+- Built with **Next.js 14** + **TypeScript**
+- 10+ production deployments on Vercel
 
-Future improvement:
-
-* Automated deployment with GitHub Actions CI/CD pipeline
+🔗 [GitHub](https://github.com/piyaphan098/it-erp-system) | 🌐 [Live Demo](http://54.251.70.163:3000)
 
 ---
 
-# 🛠️ Tech Stack
+## 📊 GitHub Stats
 
-| Category        | Technology                       |
-| --------------- | -------------------------------- |
-| Cloud Provider  | AWS                              |
-| Compute         | EC2 (Amazon Linux 2023)          |
-| Containers      | Docker, Docker Compose           |
-| Web Servers     | Nginx, Apache                    |
-| Storage         | S3 Static Website Hosting        |
-| Networking      | VPC, Security Groups, Elastic IP |
-| IAM             | IAM Role (no access keys stored) |
-| Monitoring      | CloudWatch                       |
-| Version Control | Git, GitHub                      |
-| CLI Tools       | AWS CLI, Bash                    |
+![Piyaphan's GitHub Stats](https://github-readme-stats.vercel.app/api?username=piyaphan098&show_icons=true&theme=default&hide_border=true)
 
 ---
 
-# 📦 Repository Structure
+## 📫 Contact
 
-```
-aws-portfolio
-│
-├── html/
-│   └── index.html
-│
-├── Dockerfile
-├── docker-compose.yml
-├── .gitignore
-└── README.md
-```
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/piyaphan)
+[![Email](https://img.shields.io/badge/Email-piyaphan1584@gmail.com-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:piyaphan1584@gmail.com)
 
 ---
 
-# 🚀 Deployment Guide
-
-## Prerequisites
-
-* AWS account
-* EC2 instance (Amazon Linux 2023)
-* Key pair (.pem file)
-* Security group allowing port **80**
-
----
-
-## 1. Connect to EC2
-
-```
-ssh -i your-key.pem ec2-user@YOUR_EC2_IP
-```
-
----
-
-## 2. Install Docker
-
-```
-sudo yum update -y
-sudo yum install docker git -y
-
-sudo systemctl start docker
-sudo systemctl enable docker
-
-sudo usermod -aG docker ec2-user
-```
-
-Log out and log in again for Docker permissions to take effect.
-
----
-
-## 3. Clone the Repository
-
-```
-git clone https://github.com/piyaphan098/aws-portfolio.git
-cd aws-portfolio
-```
-
----
-
-## 4. Deploy Containers
-
-```
-docker compose up -d
-```
-
----
-
-## 5. Verify Deployment
-
-```
-docker ps
-curl http://localhost
-```
-
----
-
-# 🔐 Security Best Practices
-
-This project follows several cloud security practices:
-
-* IAM Role attached to EC2 (no access keys stored)
-* SSH restricted to a trusted IP
-* Instance Metadata Service v2 (IMDSv2) enabled
-* Minimal open ports in Security Groups
-* Docker containers isolated from host environment
-
----
-
-# 📚 Key Skills Demonstrated
-
-* Deploying infrastructure on AWS
-* Running Docker containers on cloud servers
-* Configuring IAM roles with least privilege
-* Hosting static websites using S3
-* Using AWS CLI and Linux automation
-* Managing Git workflow for deployments
-
----
-
-# 👤 About Me
-
-**Piyaphan Sukpong**
-
-Junior Cloud Engineer
-Transitioning from **IT Support → Cloud Infrastructure**
-
-📍 Thailand
-🟢 Open to work — Cloud Engineer / DevOps roles
-
----
-
-⭐ Built with passion using the AWS Free Tier
+*Junior Cloud Engineer transitioning from IT Support — building real infrastructure with real cloud tools.*
