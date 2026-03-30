@@ -1,0 +1,5 @@
+﻿.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+terraform_1.14.8_windows_amd64/
