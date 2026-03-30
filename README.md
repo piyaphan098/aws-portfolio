@@ -31,7 +31,7 @@
 - Automated deployment via **GitHub Actions** CI/CD pipeline
 - Static website hosted on **S3**
 
-🔗 [GitHub](https://github.com/piyaphan098/aws-portfolio) | 🌐 [Live Demo]((http://47.129.0.5/))
+🔗 [GitHub](https://github.com/piyaphan098/aws-portfolio) | 🌐 [Live Demo](http://47.129.0.5)
 
 ---
 
