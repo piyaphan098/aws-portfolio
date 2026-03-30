@@ -43,7 +43,7 @@
 - Built with **Next.js 14** + **TypeScript**
 - 10+ production deployments on Vercel
 
-🔗 [GitHub](https://github.com/piyaphan098/it-erp-system) | 🌐 [Live Demo](http://54.251.70.163:3000)
+🔗 [GitHub](https://github.com/piyaphan098/it-erp-system) | 🌐 [Live Demo](http://54.251.70.16:3000)
 
 ---
 
